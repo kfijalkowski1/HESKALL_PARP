@@ -1,7 +1,8 @@
 module Main where
 
-import TextData
-
+import Instruction
+import Location
+import Item
 
 -- print strings from list in separate lines
 printLines :: [String] -> IO ()

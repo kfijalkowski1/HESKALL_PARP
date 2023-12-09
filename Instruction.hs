@@ -1,4 +1,4 @@
-module TextData where
+module Instruction where
 
 instructionsText =
     [
@@ -17,5 +17,3 @@ instructionsText =
         "quit               -- aby wyjść z Haskell-a.",
         ""
     ]
-
-

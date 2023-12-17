@@ -252,7 +252,7 @@ laka = Location {
         ""
     ],
     loc_health_change = 0,
-    loc_items = [],
+    loc_items = [patyk], -- usunąc potem, do testów działania take
     loc_paths = []
 }
 

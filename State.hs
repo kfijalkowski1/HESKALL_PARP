@@ -5,7 +5,6 @@ import Location
 
 data State = State
   { i_am_at :: Location,
-    item_at :: [(Item, Location)],
     holding :: [Item],
     takeable :: [Item],
     hp :: Integer,
@@ -17,7 +16,6 @@ data State = State
 initialState :: State
 initialState = State {
     i_am_at = laka,
-    item_at = [(patyk, laka)],
     holding = [],
     takeable = [patyk],
     hp = 5,

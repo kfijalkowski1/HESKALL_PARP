@@ -43,3 +43,11 @@ printTake state item = do
     let msg = item_description itemObj
     putStr msg
   else do putStr (item ++ " nie istnieje")
+
+
+printStats :: State -> IO()
+printStats state = do
+  let health = hp state
+  let cur_atack = atack state
+  putStrLn ("Aktualna ilość hp: " ++ show health)
+  putStrLn ("Aktualna ilość ataku: " ++ show cur_atack)

@@ -28,9 +28,9 @@ gameLoop state = do
           printInstructions
           gameLoop state
 
-        -- ["stats"] -> do
-        --   printStats state
-        --   gameLoop state
+        ["stats"] -> do
+          printStats state
+          gameLoop state
 
         ["take", object] -> do
           let newState = takeItem state object

@@ -3,6 +3,7 @@ module Location where
 import Item
 
 data Location = Location{
+    loc_name :: String,
     loc_description :: [String],
     loc_search :: [String],
     -- loc_potential_fight ??? i wtedy module Fight, albo jakiś 'bool', idk
@@ -13,6 +14,7 @@ data Location = Location{
 
 
 pustkowie2 = Location {
+    loc_name = "pustkowie2",
     loc_description = [
         "Wędrujesz przez pustkowie, gdzie krajobraz jest surowy, a ziemia spękana od przesuszenia.",
         "Nie ma tu żadnych oznak życia, a jedynym towarzyszem jest oszałamiające słońce na bezchmurnym niebie.",
@@ -31,6 +33,7 @@ pustkowie2 = Location {
 }
 
 oceanStatek = Location {
+    loc_name = "oceanStatek",
     loc_description = [
         "Unosisz nad dnem oceanu, gdzie rozciąga się zatopiony wrak statku, pozostawiający po sobie tylko fragmenty dawnej świetności.",
         "Roślinność morska oplata kadłub statku, a promienie słońca przebijające się przez wodę tworzą migotliwe światło na dnie oceanu.",
@@ -51,6 +54,7 @@ oceanStatek = Location {
 }
 
 oceanPusty = Location {
+    loc_name = "oceanPusty",
     loc_description = [
         "Nurkujesz w głąb oceanu, a wokół ciebie rozciąga się pusty, bezkresny obszar wód głębinowych.",
         "Brak jakiejkolwiek roślinności czy form życia, jedynie monotonny krajobraz niekończących się wód oceanicznych.",
@@ -68,6 +72,7 @@ oceanPusty = Location {
 }
 
 rafaKoralowa = Location {
+    loc_name = "rafaKoralowa",
     loc_description = [
         "Zanurzasz się w barwnym świecie rafy koralowej, gdzie tysiące koralowców tworzy niezwykłe formacje podwodne.",
         "Rafa pulsuje życiem, a kolorowe ryby przeplatają się między koralami, tworząc hipnotyzujący taniec pod wodą.",
@@ -86,6 +91,7 @@ rafaKoralowa = Location {
 }
 
 jaskiniaPodwodna = Location {
+    loc_name = "jaskiniaPodwodna",
     loc_description = [
         "Nurkujesz głęboko w czeluście podwodnej jaskini, gdzie światło słoneczne ledwo przenika przez kryształową wodę.",
         "Ściany jaskini są pokryte koralowymi formacjami, a kolorowe ryby migoczą wśród zakamarków, tworząc podwodne arcydzieło natury.",
@@ -104,6 +110,7 @@ jaskiniaPodwodna = Location {
 }
 
 obozRozbojnikow = Location {
+    loc_name = "obozRozbojnikow",
     loc_description = [
         "Znajdujesz się przed obozem rozbójników, ukrytym obok pustkowia w gęstym lesie, z dala od cywilizacji.",
         "Na obrzeżach obozu widzisz prymitywne szałasy zrobione z gałęzi i skór, a dym z ognisk unosi się w powietrze.",
@@ -122,6 +129,7 @@ obozRozbojnikow = Location {
 }
 
 rzeka = Location {
+    loc_name = "rzeka",
     loc_description = [
         "Stoisz na brzegu urokliwego jeziora, gdzie spokojna rzeka płynąca z gór wpada w jego nurt, tworząc malownicze połączenie wód.",
         "Miejsce to emanuje harmonią natury, gdzie szum rzeki miesza się z delikatnym falowaniem jeziora.",
@@ -142,6 +150,7 @@ rzeka = Location {
 }
 
 kanion = Location {
+    loc_name = "kanion",
     loc_description = [
         "Nagle zapada się pod tobą ziemia, cudem przeżywasz upadek jednak teraz znajdujesz sięna dnie wielkiego kanionu.",
         "Ściany skalne wznoszą się ku niebu, tworząc imponujący labirynt głębokich wąwozów.",
@@ -159,6 +168,7 @@ kanion = Location {
 }
 
 lasBrzozowy = Location {
+    loc_name = "lasBrzozowy",
     loc_description = [
         "Przechadzasz się przez uroczy las brzozowy, gdzie delikatne liście brzóz szumią w letnim wietrze.",
         "Pod stopami czujesz miękki dywan z opadłych liści, a promienie słońca przebijające się przez korony drzew malują złote plamy na ziemi.",
@@ -179,6 +189,7 @@ lasBrzozowy = Location {
 }
 
 jaskinia2 = Location {
+    loc_name = "jaskinia2",
     loc_description = [
         "Wkraczasz do jaskini, a wnętrze mieni się blaskiem tysięcy kryształów o różnych kształtach i kolorach.",
         "Ściany jaskini są dosłownie pokryte błyszczącymi klejnotami, które odbijają światło w fantastyczny sposób.",
@@ -202,6 +213,7 @@ jaskinia2 = Location {
 }
 
 gory = Location {
+    loc_name = "gory",
     loc_description = [
         "Wspinasz się po majestatycznych szczytach gór, gdzie powietrze staje się rzadkie, a panorama roztacza się na wszystkie strony.",
         "Skały odbijają odcienie wschodzącego słońca, malując krajobraz w ciepłych kolorach pomarańczy i różu.",
@@ -223,6 +235,7 @@ gory = Location {
 }
 
 jezioro = Location {
+    loc_name = "jezioro",
     loc_description = [
         "Stoisz na brzegu spokojnego jeziora, którego powierzchnia migocze w blasku promieni słonecznych.",
         "Woda jest krystalicznie czysta, a na jej powierzchni unoszą się kolorowe liście i płyną delikatne fale.",
@@ -240,6 +253,7 @@ jezioro = Location {
 }
 
 laka = Location {
+    loc_name = "laka",
     loc_description = [
         "Jesteś na malowniczej łące, gdzie zielenią traw rozbłyskują kolorowe kwiaty.",
         "Ptaki śpiewają w gałęziach drzew, a w oddali słychać szmer strumyka.",
@@ -257,6 +271,7 @@ laka = Location {
 }
 
 lasDebowy = Location {
+    loc_name = "lasDebowy",
     loc_description = [
         "Wchodzisz do gęstego lasu dębowego, gdzie potężne drzewa sięgają w niebo, tworząc gęstą i cienistą szatę.",
         "Światło słoneczne ledwo przedostaje się przez gęstwiny liści, rzucając plamy światła na korzenie i mchy pokrywające ziemię.",
@@ -275,6 +290,7 @@ lasDebowy = Location {
 }
 
 wysokieGory = Location {
+    loc_name = "wysokieGory",
     loc_description = [
         "Stoisz w cieniu potężnych szczytów wysokich gór, gdzie powietrze jest rzadkie, a krajobraz zapiera dech w piersiach.",
         "Na ich szczytach błyszczą wieczne lodowce, a w dolinach unosi się lekka mgła.",
@@ -294,6 +310,7 @@ wysokieGory = Location {
 }
 
 jaskinia1 = Location {
+    loc_name = "jaskinia1",
     loc_description = [
         "Wchodzisz do ciemnej jaskini, gdzie ciemność otacza cię ze wszystkich stron.",
         "Mroczne tunele wydają się prowadzić głęboko pod ziemię.",
@@ -313,6 +330,7 @@ jaskinia1 = Location {
 }
 
 tajga = Location {
+    loc_name = "tajga",
     loc_description = [
         "Przechadzasz się przez tajgę, gdzie drzewa sosnowe gęsto porastają obszar wokół ciebie.",
         "Pod stopami chrupie suchy mech, a powietrze nasycone jest zapachem żywicy.",
@@ -332,6 +350,7 @@ tajga = Location {
 }
 
 wioska = Location {
+    loc_name = "wioska",
     loc_description = [
         "Przechadzasz się przez malowniczą wioskę, gdzie drewniane domy układają się wzdłuż brukowanych uliczek.",
         "Ludzie rozmawiają ze sobą na ulicach, a dzieci biegają wesoło wokół zabawek.",
@@ -350,6 +369,7 @@ wioska = Location {
 }
 
 dolina = Location {
+    loc_name = "dolina",
     loc_description = [
         "Przechadzasz się po spokojnej dolinie, gdzie z obu stron wznoszą się zielone wzgórza.",
         "W dolinie kwitną kolorowe kwiaty, a delikatny wiatr niesie ze sobą świeży zapach traw i roślin.",
@@ -368,6 +388,7 @@ dolina = Location {
 }
 
 zniszczonyPortal = Location {
+    loc_name = "zniszczonyPortal",
     loc_description = [
         "Stoisz przed zniszczonym portalem, którego kształt przypomina pozostałości po dawnych potęgach magicznych.",
         "Jego kamienne bloki są popękane, a magiczne symbole na powierzchni zatraciły swój dawny blask.",
@@ -388,6 +409,7 @@ zniszczonyPortal = Location {
 }
 
 tundra = Location {
+    loc_name = "tundra",
     loc_description = [
         "Przechadzasz się po rozległej tundrze, gdzie ziemia jest pokryta warstwą mchu i niskich krzewów, a drzewa są rzadkością.",
         "Pod stopami czujesz chłód wilgotnej gleby, a w powietrzu unosi się delikatny zapach mchu i roślinności tundry.",
@@ -408,6 +430,7 @@ tundra = Location {
 }
 
 stepy = Location {
+    loc_name = "stepy",
     loc_description = [
         "Przechadzasz się po rozległych stepach, gdzie trawa faluje na wietrze, tworząc ocean zielonej roślinności.",
         "Pod stopami czujesz miękki dywan trawy, a w oddali widzisz grupy dzikich koni swobodnie biegających po stepach.",
@@ -427,6 +450,7 @@ stepy = Location {
 }
 
 pustynia = Location {
+    loc_name = "pustynia",
     loc_description = [
         "Wkraczasz na bezkresną pustynię, gdzie ziemia pokryta jest złotym piaskiem, a horyzont zdaje się nigdy nie kończyć.",
         "Słońce praży niebłaganie, tworząc fale gorącego powietrza, a cienie są niemal niemożliwe do znalezienia.",
@@ -446,6 +470,7 @@ pustynia = Location {
 }
 
 mesa = Location {
+    loc_name = "mesa",
     loc_description = [
         "Stoisz na szczycie majestatycznej mesy, gdzie kamienne formacje tworzą surrealistyczny krajobraz.",
         "Słońce rzuca długie cienie na czerwoną ziemię, podkreślając kontury unikalnych kształtów skał.",
@@ -465,6 +490,7 @@ mesa = Location {
 }
 
 pustkowie1 = Location {
+    loc_name = "pustkowie1",
     loc_description = [
         "Wchodzisz na obszar pustkowia, gdzie ziemia jest spękana i sucha, a niebo zdaje się nie mieć końca.",
         "Nie ma tu żadnej roślinności, a jedynym towarzyszem jest skwarny wiatr unoszący kłęby kurzu w powietrzu.",
@@ -484,6 +510,7 @@ pustkowie1 = Location {
 }
 
 moon = Location {
+    loc_name = "moon",
     loc_description = [
         "Księżyc."
     ],

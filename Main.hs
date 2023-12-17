@@ -37,13 +37,13 @@ gameLoop state = do
           printTake newState object
           gameLoop newState
 
-        -- ["look"] -> do
-        --   printLook state
-        --   gameLoop newState
+        ["look"] -> do
+          printLook state
+          gameLoop state
 
-        -- ["search"] -> do
-        --   printSearch state
-        --   gameLoop newState
+        ["search"] -> do
+          printSearch state
+          gameLoop state
 
         -- ["goToMoon"] -> do
         --   printSearch state

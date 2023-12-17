@@ -50,3 +50,20 @@ printStats state = do
   let cur_atack = atack state
   putStrLn ("Aktualna ilość hp: " ++ show health)
   putStrLn ("Aktualna ilość ataku: " ++ show cur_atack)
+
+
+printSearch :: State -> IO()
+printSearch state = do
+    putStrLn ("W " ++ (loc_name (i_am_at state)) ++ "znajduje się: ")
+    putStrLn "---------"
+    printItems( (loc_items (i_am_at state)) )
+
+printItems :: [Item] -> IO()
+printItems (item: items) = do
+  let listLength = length items
+  let msg = item_name item
+  putStrLn ("-- " ++ msg)
+  if (listLength /= 0) then do
+    printItems items
+  else do
+    putStrLn "---------"

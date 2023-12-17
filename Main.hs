@@ -5,6 +5,7 @@ import System.Exit (exitWith, ExitCode(..))
 import State
 import Location
 import Functions
+import ItemF
 
 
 readCommand :: IO String
@@ -27,35 +28,35 @@ gameLoop state = do
           printInstructions
           gameLoop state
 
-        ["stats"] -> do
-          printStats state
-          gameLoop state
+        -- ["stats"] -> do
+        --   printStats state
+        --   gameLoop state
 
         ["take", object] -> do
           let newState = takeItem state object
-          printTake state newState object
+          printTake newState object
           gameLoop newState
 
-        ["look"] -> do
-          printLook state
-          gameLoop newState
+        -- ["look"] -> do
+        --   printLook state
+        --   gameLoop newState
 
-        ["search"] -> do
-          printSearch state
-          gameLoop newState
+        -- ["search"] -> do
+        --   printSearch state
+        --   gameLoop newState
 
-        ["goToMoon"] -> do
-          printSearch state
-          gameLoop newState
+        -- ["goToMoon"] -> do
+        --   printSearch state
+        --   gameLoop newState
 
-        ["map"] -> do
-          printSearch state
-          gameLoop newState
+        -- ["map"] -> do
+        --   printSearch state
+        --   gameLoop newState
 
-        ["go", location] -> do
-          let newState = goToLocation state location
-          descLocation newState location
-          gameLoop newState
+        -- ["go", location] -> do
+        --   let newState = goToLocation state location
+        --   descLocation newState location
+        --   gameLoop newState
 
         ["quit"] -> return ()
 
@@ -64,5 +65,5 @@ gameLoop state = do
           gameLoop state
 
 main = do
-    printIntroduction
+    -- printIntroduction
     gameLoop initialState

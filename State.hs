@@ -1,17 +1,15 @@
 module State where
 
-import Place
-import Object
-import Person
-import Abstract
+import Item
+import Location
 
 data State = State
-  { i_am_at :: Place,
-    object_at :: [(Object, Place)],
-    holding :: [Object],
-    takeable :: [Object],
-    hp :: Int,
-    atack :: Int,
+  { i_am_at :: Location,
+    item_at :: [(Item, Location)],
+    holding :: [Item],
+    takeable :: [Item],
+    hp :: Integer,
+    atack :: Integer,
     dead :: Bool,
     finished :: Bool
   }
@@ -19,10 +17,11 @@ data State = State
 initialState :: State
 initialState = State {
     i_am_at = laka,
-    object_at = [(patyk, laka)],
+    item_at = [(patyk, laka)],
     holding = [],
     takeable = [patyk],
     hp = 5,
+    atack = 5,
     dead = False,
     finished = True
 }

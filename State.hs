@@ -3,6 +3,7 @@ module State where
 import Item
 import Location
 
+
 data State = State
   { i_am_at :: Location,
     holding :: [Item],
@@ -11,6 +12,7 @@ data State = State
     dead :: Bool,
     finished :: Bool
   }
+
 
 initialState :: State
 initialState = State {
@@ -21,4 +23,3 @@ initialState = State {
     dead = False,
     finished = True
 }
-

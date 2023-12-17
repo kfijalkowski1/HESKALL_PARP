@@ -15,6 +15,7 @@ readCommand = do
     hFlush stdout
     getLine
 
+
 gameLoop :: State -> IO ()
 gameLoop state = do
     if dead state then do
@@ -65,6 +66,7 @@ gameLoop state = do
         _ -> do
           printLines ["Unknown command.", ""]
           gameLoop state
+
 
 main = do
     -- printIntroduction

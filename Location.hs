@@ -2,6 +2,7 @@ module Location where
 
 import Item
 
+
 data Location = Location{
     loc_name :: String,
     loc_description :: [String],

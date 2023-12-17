@@ -5,6 +5,7 @@ import State
 import Location
 import System.IO ( hFlush, stdout )
 
+
 takeItem :: State -> String -> State
 takeItem state item = do
   if itemIn (loc_items (i_am_at state)) item then do
@@ -32,6 +33,7 @@ getItemByName (item: items) iName = do
   if (item_name(item)) == iName then do
     item
   else do getItemByName items iName
+
 
 printTake :: State -> String -> IO()
 printTake state item = do

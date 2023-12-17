@@ -22,4 +22,4 @@ printGoingToMoon state = do
   if (loc_name (i_am_at state)) == "moon" then do
     putStrLn "Jesteś na księżycu, fdsfs" --TODO napisać opis
     exitWith ExitSuccess
-  else do putStr ("Aby polecieć na księżyc potrzebujessz portalOne, portalTwo, portalThree w swoim ekwipunku")
+  else do putStr ("Aby polecieć na księżyc, potrzebujesz portalOne, portalTwo, portalThree w swoim ekwipunku.")

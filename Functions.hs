@@ -5,6 +5,7 @@ import State
 import Location
 import Item
 
+
 printLines :: [String] -> IO ()
 printLines xs = putStr (unlines xs)
 
@@ -15,6 +16,7 @@ printLook :: State -> IO()
 printLook state = do
   let msg = loc_description (i_am_at state)
   printLines msg
+
 
 printStats :: State -> IO()
 printStats state = do
@@ -30,6 +32,7 @@ printSearch state = do
     putStrLn "---------"
     printItems( (loc_items (i_am_at state)) )
 
+
 printItems :: [Item] -> IO()
 printItems (item: items) = do
   let listLength = length items
@@ -39,5 +42,3 @@ printItems (item: items) = do
     printItems items
   else do
     putStrLn "---------"
-
-

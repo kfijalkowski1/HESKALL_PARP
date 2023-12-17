@@ -1,5 +1,6 @@
 module Item where
 
+
 data Item = Item {
     item_name :: String,
     item_description :: String,
@@ -9,10 +10,9 @@ data Item = Item {
     deriving (Eq, Show)
 
 
-
 zlotaBransoleta = Item{
     item_name = "zlotaBransoleta",
-    item_description = "Dostajesz +2 punkty życia i +2 do ataku, po założeniu złotej bransolety.",
+    item_description = "Dostajesz +2 punkty życia i +2 do ataku po założeniu złotej bransolety.",
     item_health_change = 2,
     item_attack_change = 2
 }

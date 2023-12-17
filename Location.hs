@@ -9,7 +9,7 @@ data Location = Location{
     -- loc_potential_fight ??? i wtedy module Fight, albo jakiś 'bool', idk
     loc_health_change :: Integer,
     loc_items :: [Item],
-    loc_paths :: [Location] -- ewentualnie coś w stylu [(Direction, Location)]
+    loc_paths :: [Location]
 }
 
 
@@ -29,7 +29,7 @@ pustkowie2 = Location {
     ],
     loc_health_change = 0,
     loc_items = [kamien],
-    loc_paths = []
+    loc_paths = [oceanStatek, obozRozbojnikow]
 }
 
 oceanStatek = Location {
@@ -50,7 +50,7 @@ oceanStatek = Location {
     ],
     loc_health_change = 0,
     loc_items = [zlotaBransoleta, portalOne],
-    loc_paths = []
+    loc_paths = [oceanPusty, rzeka, pustkowie2]
 }
 
 oceanPusty = Location {
@@ -68,7 +68,7 @@ oceanPusty = Location {
     ],
     loc_health_change = 0,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [rafaKoralowa, kanion, oceanStatek]
 }
 
 rafaKoralowa = Location {
@@ -87,7 +87,7 @@ rafaKoralowa = Location {
     ],
     loc_health_change = 0,
     loc_items = [naramiennik],
-    loc_paths = []
+    loc_paths = [jaskiniaPodwodna, lasBrzozowy, oceanPusty]
 }
 
 jaskiniaPodwodna = Location {
@@ -106,7 +106,7 @@ jaskiniaPodwodna = Location {
     ],
     loc_health_change = 0,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [jaskinia2, rafaKoralowa]
 }
 
 obozRozbojnikow = Location {
@@ -125,7 +125,7 @@ obozRozbojnikow = Location {
     ],
     loc_health_change = 0,
     loc_items = [skorzaneButy],
-    loc_paths = []
+    loc_paths = [pustkowie2, rzeka, gory]
 }
 
 rzeka = Location {
@@ -146,7 +146,7 @@ rzeka = Location {
     ],
     loc_health_change = 0,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [oceanStatek, kanion, jezioro, obozRozbojnikow]
 }
 
 kanion = Location {
@@ -164,7 +164,7 @@ kanion = Location {
     ],
     loc_health_change = -3,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [oceanPusty, lasBrzozowy, laka, rzeka]
 }
 
 lasBrzozowy = Location {
@@ -185,7 +185,7 @@ lasBrzozowy = Location {
     ],
     loc_health_change = 0,
     loc_items = [miod],
-    loc_paths = []
+    loc_paths = [rafaKoralowa, jaskinia2, lasDebowy, kanion]
 }
 
 jaskinia2 = Location {
@@ -209,7 +209,7 @@ jaskinia2 = Location {
     ],
     loc_health_change = 0,
     loc_items = [zbroja, portalTwo],
-    loc_paths = []
+    loc_paths = [jaskiniaPodwodna, wysokieGory, lasBrzozowy]
 }
 
 gory = Location {
@@ -231,7 +231,7 @@ gory = Location {
     ],
     loc_health_change = -2,
     loc_items = [miecz],
-    loc_paths = []
+    loc_paths = [obozRozbojnikow, jezioro, jaskinia1]
 }
 
 jezioro = Location {
@@ -249,7 +249,7 @@ jezioro = Location {
     ],
     loc_health_change = 0,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [rzeka, laka, tajga, gory]
 }
 
 laka = Location {
@@ -266,8 +266,8 @@ laka = Location {
         ""
     ],
     loc_health_change = 0,
-    loc_items = [patyk], -- usunąc potem, do testów działania take
-    loc_paths = []
+    loc_items = [],
+    loc_paths = [kanion, lasDebowy, wioska, jezioro]
 }
 
 lasDebowy = Location {
@@ -286,7 +286,7 @@ lasDebowy = Location {
     ],
     loc_health_change = 0,
     loc_items = [skoraWilka],
-    loc_paths = []
+    loc_paths = [lasBrzozowy, wysokieGory, dolina, laka]
 }
 
 wysokieGory = Location {
@@ -306,7 +306,7 @@ wysokieGory = Location {
     ],
     loc_health_change = -4,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [jaskinia2, zniszczonyPortal, lasDebowy]
 }
 
 jaskinia1 = Location {
@@ -326,7 +326,7 @@ jaskinia1 = Location {
     ],
     loc_health_change = 0,
     loc_items = [portalThree],
-    loc_paths = []
+    loc_paths = [gory, tajga, tundra]
 }
 
 tajga = Location {
@@ -346,7 +346,7 @@ tajga = Location {
     ],
     loc_health_change = -1,
     loc_items = [patyk],
-    loc_paths = []
+    loc_paths = [jezioro, wioska, stepy, jaskinia1]
 }
 
 wioska = Location {
@@ -365,7 +365,7 @@ wioska = Location {
     ],
     loc_health_change = 0,
     loc_items = [chleb],
-    loc_paths = []
+    loc_paths = [laka, dolina, pustynia, tajga]
 }
 
 dolina = Location {
@@ -384,7 +384,7 @@ dolina = Location {
     ],
     loc_health_change = 0,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [lasDebowy, zniszczonyPortal, mesa, wioska]
 }
 
 zniszczonyPortal = Location {
@@ -405,7 +405,7 @@ zniszczonyPortal = Location {
     ],
     loc_health_change = 0,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [wysokieGory, pustkowie1, dolina]
 }
 
 tundra = Location {
@@ -426,7 +426,7 @@ tundra = Location {
     ],
     loc_health_change = -3,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [jaskinia1, stepy]
 }
 
 stepy = Location {
@@ -446,7 +446,7 @@ stepy = Location {
     ],
     loc_health_change = 0,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [tajga, pustynia, tundra]
 }
 
 pustynia = Location {
@@ -466,7 +466,7 @@ pustynia = Location {
     ],
     loc_health_change = -1,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [wioska, mesa, stepy]
 }
 
 mesa = Location {
@@ -486,7 +486,7 @@ mesa = Location {
     ],
     loc_health_change = 0,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [dolina, pustkowie1, pustynia]
 }
 
 pustkowie1 = Location {
@@ -506,7 +506,7 @@ pustkowie1 = Location {
     ],
     loc_health_change = 0,
     loc_items = [],
-    loc_paths = []
+    loc_paths = [zniszczonyPortal, mesa]
 }
 
 moon = Location {

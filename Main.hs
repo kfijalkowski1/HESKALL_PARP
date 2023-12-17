@@ -6,6 +6,7 @@ import State
 import Location
 import Functions
 import ItemF
+import Travel
 
 
 readCommand :: IO String
@@ -45,9 +46,10 @@ gameLoop state = do
           printSearch state
           gameLoop state
 
-        -- ["goToMoon"] -> do
-        --   printSearch state
-        --   gameLoop newState
+        ["goToMoon"] -> do
+          let newState = goToMoon state
+          printGoingToMoon newState
+          gameLoop newState
 
         -- ["map"] -> do
         --   printSearch state

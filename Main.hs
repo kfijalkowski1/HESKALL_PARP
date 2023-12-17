@@ -1,34 +1,68 @@
 module Main where
 
-import Instruction
+import System.IO ( hFlush, stdout )
+import System.Exit (exitWith, ExitCode(..))
+import State
 import Location
-import Item
+import Functions
 
--- print strings from list in separate lines
-printLines :: [String] -> IO ()
-printLines xs = putStr (unlines xs)
-
-printInstructions = printLines instructionsText
 
 readCommand :: IO String
 readCommand = do
     putStr "> "
-    xs <- getLine
-    return xs
+    hFlush stdout
+    getLine
 
--- note that the game loop may take the game state as
--- an argument, eg. gameLoop :: State -> IO ()
-gameLoop :: IO ()
-gameLoop = do
-    cmd <- readCommand
-    case cmd of
-        "instructions" -> do printInstructions
-                             gameLoop
-        "quit" -> return ()
-        _ -> do printLines ["Unknown command.", ""]
-                gameLoop
+gameLoop :: State -> IO ()
+gameLoop state = do
+    if dead state then do
+      putStrLn "You died..."
+      exitWith ExitSuccess
+    else do
+      putStrLn ""
+      cmd <- readCommand
+      putStrLn ""
+      case words (cmd) of
+        ["instructions"] -> do
+          printInstructions
+          gameLoop state
+
+        ["stats"] -> do
+          printStats state
+          gameLoop state
+
+        ["take", object] -> do
+          let newState = takeItem state object
+          printTake state newState object
+          gameLoop newState
+
+        ["look"] -> do
+          printLook state
+          gameLoop newState
+
+        ["search"] -> do
+          printSearch state
+          gameLoop newState
+
+        ["goToMoon"] -> do
+          printSearch state
+          gameLoop newState
+
+        ["map"] -> do
+          printSearch state
+          gameLoop newState
+
+        ["go", location] -> do
+          let newState = goToLocation state location
+          descLocation newState location
+          gameLoop newState
+
+        ["quit"] -> return ()
+
+        _ -> do
+          printLines ["Unknown command.", ""]
+          gameLoop state
 
 main = do
-    printInstructions
-    gameLoop
-
+    printIntroduction
+    gameLoop initialState

@@ -1,5 +1,5 @@
 import Control.Monad.State
-
+import Data.Functor.Identity
 
 introductionText = [
     "A long time ago, in a galaxy far, far away...",
@@ -35,26 +35,26 @@ instructionsText = [
 data GameState = GameState { healthPoints :: Int }
 
 -- Funkcje do operacji na stanie
-getHealth :: State GameState Int
+getHealth :: StateT GameState Int IO ()
 getHealth = do
   gameState <- get
   return $ healthPoints gameState
 
-setHealth :: Int -> State GameState ()
+setHealth :: Int -> StateT GameState ()
 setHealth newHealth = do
   gameState <- get
   put $ gameState { healthPoints = newHealth }
 
 -- Funkcja wykonująca obliczenia związane ze stanem
-performAction :: State GameState ()
+performAction :: StateT GameState IO ()
 performAction = do
   currentHealth <- getHealth
   if currentHealth > 0
     then do
       setHealth (currentHealth - 10)
-      putStr "Zadano 10 obrażeń!"
+      liftIO $ putStr "Zadano 10 obrażeń!"
     else
-      putStr "Postać już nie żyje."
+      liftIO $ putStr "Postać już nie żyje."
 
 
 
@@ -72,22 +72,21 @@ readCommand = do
     xs <- getLine
     return xs
 
--- note that the game loop may take the game state as
--- an argument, eg. gameLoop :: State -> IO ()
-gameLoop :: IO ()
+gameLoop :: StateT GameState IO ()
 gameLoop = do
-    cmd <- readCommand
+    cmd <- liftIO readCommand
     case cmd of
         "instructions" -> do printInstructions
                              gameLoop
         "health" -> do performAction
                         gameLoop
         "quit" -> return ()
-        _ -> do printLines ["Unknown command.", ""]
+        _ -> do liftIO $ printLines ["Unknown command.", ""]
                 gameLoop
 
+main :: IO ()
 main = do
     printIntroduction
-    printInstructions
-    gameLoop
+    liftIO printInstructions
+    evalStateT gameLoop (GameState { healthPoints = 100 })
 

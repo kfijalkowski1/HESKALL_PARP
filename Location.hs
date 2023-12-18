@@ -7,7 +7,7 @@ data Location = Location{
     loc_name :: String,
     loc_description :: [String],
     loc_search :: [String],
-    -- loc_potential_fight ??? i wtedy module Fight, albo jakiś 'bool', idk
+    loc_attack_required :: Integer,
     loc_health_change :: Integer,
     loc_items :: [Item],
     loc_paths :: [Location]
@@ -28,6 +28,7 @@ pustkowie2 = Location {
         "Jest to solidny kamień o ostrym kształcie, nadający się do rzucania lub używania jako improwizowana broń.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [kamien],
     loc_paths = [oceanStatek, obozRozbojnikow]
@@ -49,6 +50,7 @@ oceanStatek = Location {
         "To wyjątkowy przedmiot, który zdaje się być starożytnym skarbem utraconym w czasie zatopienia statku.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [zlotaBransoleta, portalOne],
     loc_paths = [oceanPusty, rzeka, pustkowie2]
@@ -67,6 +69,7 @@ oceanPusty = Location {
         "Mimo starannej obserwacji, nie odkrywasz żadnych interesujących elementów tego obszaru oceanicznego.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = [rafaKoralowa, kanion, oceanStatek]
@@ -86,6 +89,7 @@ rafaKoralowa = Location {
         "Skrzynka zdaje się być starożytna i pokryta kolorowymi morskimi roślinami, co czyni ją trudno dostrzegalną.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [naramiennik],
     loc_paths = [jaskiniaPodwodna, lasBrzozowy, oceanPusty]
@@ -105,7 +109,8 @@ jaskiniaPodwodna = Location {
         "W jaskini podwodnej dostrzegasz jedynie pozostałości po dawnych ucztach utopców.",
         ""
     ],
-    loc_health_change = 0,
+    loc_attack_required = 5,
+    loc_health_change = -5,
     loc_items = [],
     loc_paths = [jaskinia2, rafaKoralowa]
 }
@@ -124,7 +129,8 @@ obozRozbojnikow = Location {
         "Dodatkowo, natrafiasz na kilka pozostałości po wcześniejszych ofiarach rozbójników, ale większość wartościowych przedmiotów została rozgrabiona.",
         ""
     ],
-    loc_health_change = 0,
+    loc_attack_required = 12,
+    loc_health_change = -8,
     loc_items = [skorzaneButy],
     loc_paths = [pustkowie2, rzeka, gory]
 }
@@ -145,6 +151,7 @@ rzeka = Location {
         "Pomimo starannych poszukiwań, wydaje się, że rzeka nie kryje żadnych tajemniczych przedmiotów czy innych odkryć.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = [oceanStatek, kanion, jezioro, obozRozbojnikow]
@@ -163,6 +170,7 @@ kanion = Location {
         "które wydają się być pozostałością po podróżnych, którzy nie mieli tyle szczęścia co ty.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = -3,
     loc_items = [],
     loc_paths = [oceanPusty, lasBrzozowy, laka, rzeka]
@@ -184,6 +192,7 @@ lasBrzozowy = Location {
         "To magiczne znalezisko w lesie brzozowym ukazuje nie tylko pracowitość pszczół, ale także możliwość zebrania smacznego miodu.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [miod],
     loc_paths = [rafaKoralowa, jaskinia2, lasDebowy, kanion]
@@ -208,7 +217,8 @@ jaskinia2 = Location {
         "Zbroja jest solidna i wydaje się być w dobrym stanie, gotowa do założenia i ochrony przed kolejnymi niebezpieczeństwami.",
         ""
     ],
-    loc_health_change = 0,
+    loc_attack_required = 7,
+    loc_health_change = -7,
     loc_items = [zbroja, portalTwo],
     loc_paths = [jaskiniaPodwodna, wysokieGory, lasBrzozowy]
 }
@@ -230,6 +240,7 @@ gory = Location {
         "W dotyku miecz emanuje energią, a jego ostrze migocze delikatnym światłem.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = -2,
     loc_items = [miecz],
     loc_paths = [obozRozbojnikow, jezioro, jaskinia1]
@@ -248,6 +259,7 @@ jezioro = Location {
         "Mimo braku znalezisk, atmosfera jeziora wydaje się być relaksująca i pełna uroku.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = [rzeka, laka, tajga, gory]
@@ -266,6 +278,7 @@ laka = Location {
         "Wokół panuje spokój, a delikatny zapach kwiatów unosi się w powietrzu, tworząc idylliczną atmosferę.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = [kanion, lasDebowy, wioska, jezioro]
@@ -285,7 +298,8 @@ lasDebowy = Location {
         "Twoje starania zostają nagrodzone, gdy natrafiasz na skóry wilków, które mogą posłużyć do produkcji trwałego pancerza.",
         ""
     ],
-    loc_health_change = 0,
+    loc_attack_required = 4,
+    loc_health_change = -4,
     loc_items = [skoraWilka],
     loc_paths = [lasBrzozowy, wysokieGory, dolina, laka]
 }
@@ -305,6 +319,7 @@ wysokieGory = Location {
         "Możliwe, że to wyjątkowe środowisko górskie nie kryje żadnych tajemniczych znalezisk, ale sam krajobraz jest już nagrodą.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = -4,
     loc_items = [],
     loc_paths = [jaskinia2, zniszczonyPortal, lasDebowy]
@@ -325,7 +340,8 @@ jaskinia1 = Location {
         "Ten tajemniczy fragment emanuje magiczną energią, sugerując, że może być kluczowym elementem w dalszej części twojej przygody.",
         ""
     ],
-    loc_health_change = 0,
+    loc_attack_required = 6,
+    loc_health_change = -6,
     loc_items = [portalThree],
     loc_paths = [gory, tajga, tundra]
 }
@@ -345,6 +361,7 @@ tajga = Location {
         "Możliwe, że tajga jest pięknym, ale surowym środowiskiem, które nie oferuje żadnych znaczących znalezisk.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = -1,
     loc_items = [patyk],
     loc_paths = [jezioro, wioska, stepy, jaskinia1]
@@ -364,6 +381,7 @@ wioska = Location {
         "To niespodziewany prezent z pewnością umili ci podróż i dostarczy niezbędnej energii w trudnych chwilach.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [chleb],
     loc_paths = [laka, dolina, pustynia, tajga]
@@ -383,6 +401,7 @@ dolina = Location {
         "Widok sielskiej doliny i spokojnych zwierząt stanowi jednak sam w sobie przyjemny obraz.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = [lasDebowy, zniszczonyPortal, mesa, wioska]
@@ -404,6 +423,7 @@ zniszczonyPortal = Location {
         "Możliwe, że odnalezienie tych zagubionych elementów może być kluczowym zadaniem w twojej podróży.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = [wysokieGory, pustkowie1, dolina]
@@ -425,6 +445,7 @@ tundra = Location {
         "Tundra prezentuje surowy krajobraz, pozbawiony jakichkolwiek znaczących znalezisk czy ukrytych skarbów.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = -3,
     loc_items = [],
     loc_paths = [jaskinia1, stepy]
@@ -445,6 +466,7 @@ stepy = Location {
         "Mimo prostoty krajobrazu, piękno otwartej przestrzeni może być samym w sobie nagrodą.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = [tajga, pustynia, tundra]
@@ -465,6 +487,7 @@ pustynia = Location {
         "Pustynia prezentuje surowy i bezkresny krajobraz, pozbawiony jakichkolwiek znaczących znalezisk czy ukrytych skarbów.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = -1,
     loc_items = [],
     loc_paths = [wioska, mesa, stepy]
@@ -485,6 +508,7 @@ mesa = Location {
         "Jednakże, mimo interesującej struktury, nie znajdujesz tutaj żadnych istotnych znalezisk czy ukrytych skarbów.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = [dolina, pustkowie1, pustynia]
@@ -505,6 +529,7 @@ pustkowie1 = Location {
         "Pustkowia zdają się być opuszczone, nie pozostawiając śladu po obecności czy ukrytych skarbach.",
         ""
     ],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = [zniszczonyPortal, mesa]
@@ -516,6 +541,7 @@ moon = Location {
         "Księżyc."
     ],
     loc_search = [],
+    loc_attack_required = 0,
     loc_health_change = 0,
     loc_items = [],
     loc_paths = []

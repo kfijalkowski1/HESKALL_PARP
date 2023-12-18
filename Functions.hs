@@ -29,6 +29,27 @@ printLocNames (location: locations) = do
   else do
     putStrLn "---------"
 
+printGoResult :: State -> State -> IO()
+printGoResult state newState = do
+  let currentLocation = i_am_at newState
+  let pastLocation = i_am_at state
+  if loc_name(currentLocation) == loc_name(pastLocation) then do
+    putStrLn "Niestety pomimo zaciętej walki ponosisz porażkę."
+  else do
+    putStrLn (loc_win_atack currentLocation)
+
+-- hpChange :: State -> State -> IO()
+-- hpChange state newState = do
+--   let currentHP = hp newState
+--   let pastHp = hp state
+--   let changedHp = currentHP - pastHp
+--   if currentHP == pastHp then do
+--     putStrLn ""
+--   else if changedHp > 0 then do
+--     putStrLn ("Zyskałeś: " ++ changedHp ++ " hp")
+--   else do 
+--     putStrLn ("Straciłeś: " ++ changedHp ++ " hp")
+
 printLook :: State -> IO()
 printLook state = do
   let msg = loc_description (i_am_at state)

@@ -18,7 +18,7 @@ readCommand = do
 
 gameLoop :: State -> IO ()
 gameLoop state = do
-    if dead state then do
+    if hp state <= 0 then do
       putStrLn "You died..."
       exitWith ExitSuccess
     else do
@@ -58,7 +58,8 @@ gameLoop state = do
 
         ["go", location] -> do
           let newState = goToLocation state location
-          -- printGoResult state newState
+          printGoResult state newState
+          -- hpChange state newState
           printLook newState
           gameLoop newState
 

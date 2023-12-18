@@ -9,7 +9,6 @@ data State = State
     holding :: [Item],
     hp :: Integer,
     atack :: Integer,
-    dead :: Bool,
     finished :: Bool
   }
 
@@ -20,6 +19,5 @@ initialState = State {
     holding = [],
     hp = 5,
     atack = 5,
-    dead = False,
     finished = True
 }

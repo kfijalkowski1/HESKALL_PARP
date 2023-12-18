@@ -11,6 +11,15 @@ printLines xs = putStr (unlines xs)
 
 printInstructions = printLines instructionsText
 
+map :: State -> IO()
+map state = do
+  let currentLocation = i_am_at state
+      paths = loc_paths currentLocation
+  in printLocNames paths
+
+printLocNames :: [Location] -> IO ()
+printLocNames locations =
+  mapM_ (putStrLn . loc_name) locations
 
 printLook :: State -> IO()
 printLook state = do
@@ -42,3 +51,5 @@ printItems (item: items) = do
     printItems items
   else do
     putStrLn "---------"
+
+

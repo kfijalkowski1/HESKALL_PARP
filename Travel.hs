@@ -4,6 +4,7 @@ import Item
 import ItemF
 import State
 import Location
+import Functions
 import System.IO ( hFlush, stdout )
 import System.Exit (exitWith, ExitCode(..))
 
@@ -23,3 +24,28 @@ printGoingToMoon state = do
     putStrLn "Jesteś na księżycu, fdsfs" --TODO napisać opis
     exitWith ExitSuccess
   else do putStr ("Aby polecieć na księżyc, potrzebujesz portalOne, portalTwo, portalThree w swoim ekwipunku.")
+
+goToLocation :: State -> String -> State
+goToLocation state locationName = do
+  if connected (loc_paths (i_am_at state)) locationName then do
+    let tmpState = goAt state locationName (visible state)
+    ---look tmpState
+  else state
+
+connected :: [Location] -> String -> Bool
+connected (location: locations) locationName = do
+  if (loc_name location) == locationName then do
+    True
+  else do connected locations locationName
+connected [] _ = False
+
+goAt :: State -> String -> [Location] -> State
+goAt state locationName (location: locations) = do
+  if locationName == (loc_name location) then do
+    state {
+      i_am_at = (place)
+    }
+  else do goAt state locationName locations
+
+goAt state locationName [] = state
+

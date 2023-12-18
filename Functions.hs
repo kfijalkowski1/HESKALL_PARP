@@ -11,15 +11,23 @@ printLines xs = putStr (unlines xs)
 
 printInstructions = printLines instructionsText
 
-map :: State -> IO()
-map state = do
+mapPrint :: State -> IO()
+mapPrint state = do
   let currentLocation = i_am_at state
-      paths = loc_paths currentLocation
-  in printLocNames paths
+  let paths = loc_paths currentLocation
+  putStrLn ("Z " ++ (loc_name currentLocation) ++ " prowadzą ścieżki do ")
+  putStrLn "---------"
+  printLocNames paths
 
 printLocNames :: [Location] -> IO ()
-printLocNames locations =
-  mapM_ (putStrLn . loc_name) locations
+printLocNames (location: locations) = do
+  let listLength = length locations
+  let msg = loc_name location
+  putStrLn ("-- " ++ msg)
+  if (listLength /= 0) then do
+    printLocNames locations
+  else do
+    putStrLn "---------"
 
 printLook :: State -> IO()
 printLook state = do

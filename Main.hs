@@ -52,14 +52,15 @@ gameLoop state = do
           printGoingToMoon newState
           gameLoop newState
 
-        -- ["map"] -> do
-        --   printSearch state
-        --   gameLoop newState
+        ["map"] -> do
+          mapPrint state
+          gameLoop state
 
-        -- ["go", location] -> do
-        --   let newState = goToLocation state location
-        --   descLocation newState location
-        --   gameLoop newState
+        ["go", location] -> do
+          let newState = goToLocation state location
+          -- printGoResult state newState
+          printLook newState
+          gameLoop newState
 
         ["quit"] -> return ()
 

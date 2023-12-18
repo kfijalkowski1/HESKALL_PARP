@@ -27,23 +27,28 @@ printGoingToMoon state = do
 
 goToLocation :: State -> String -> State
 goToLocation state locationName = do
-  if connected (loc_paths (i_am_at state)) locationName then do
-    let tmpState = goAt state locationName (visible state)
+  if connected state (loc_paths (i_am_at state)) locationName then do
+    let tmpState = goAt state locationName (loc_paths (i_am_at state))
     ---look tmpState
   else state
 
-connected :: [Location] -> String -> Bool
-connected (location: locations) locationName = do
+connected :: State -> [Location] -> String
+connected state (location: locations) locationName = do
   if (loc_name location) == locationName then do
-    True
-  else do connected locations locationName
-connected [] _ = False
+    if (loc_attack_required location) >= (atack state) then do
+      True
+    else do 
+      state {
+      hp = (hp state) - (loc_health_change location)
+    }
+  else do connected state locations locationName
+connected state [] _ = False
 
-goAt :: State -> String -> [Location] -> State
+goAt :: State -> String ->[Location]
 goAt state locationName (location: locations) = do
   if locationName == (loc_name location) then do
     state {
-      i_am_at = (place)
+      i_am_at = (location)
     }
   else do goAt state locationName locations
 

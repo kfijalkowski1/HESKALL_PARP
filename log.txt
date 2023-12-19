@@ -1,0 +1,328 @@
+Używaj komend zgodnie ze składnią Haskell-a.
+Dostępne komendy:
+
+instructions       -- aby zobaczyć tą wiadomość.
+stats              -- aby wyświetlić aktualne statystyki gracza.
+look               -- aby się rozejrzeć.
+search             -- aby przeszukać lokację.
+take <item>        -- aby podnieść obiekt.
+map                -- aby dowiedzieć się gdzie można iść.
+go <location>      -- aby iść do dostępnej lokacji.
+goToMoon           -- aby spróbować polecieć na księżyc.
+quit               -- aby wyjść z Haskell-a.
+
+> look
+
+Jesteś na malowniczej łące, gdzie zielenią traw rozbłyskują kolorowe kwiaty.
+Ptaki śpiewają w gałęziach drzew, a w oddali słychać szmer strumyka.
+
+> stats
+
+Aktualna ilość hp: 20
+Aktualna ilość ataku: 4
+W ekwipunku nic nie ma.
+
+> search
+
+Podczas przeszukiwania łąki, nie natrafiasz na żadne wyraźne znaki czy ciekawe przedmioty.
+Jedynym znaleziskiem są kolorowe kwiaty, które rozsiane są w każdą stronę, dodając uroku temu pięknemu miejscu.
+Wokół panuje spokój, a delikatny zapach kwiatów unosi się w powietrzu, tworząc idylliczną atmosferę.
+
+W laka nic nie ma.
+
+> map
+
+Z laka prowadzą ścieżki do
+---------
+-- kanion
+-- lasDebowy
+-- wioska
+-- jezioro
+---------
+
+> go kanion
+
+Nagle zapada się pod tobą ziemia, cudem przeżywasz upadek jednak teraz znajdujesz sięna dnie wielkiego kanionu.
+Ściany skalne wznoszą się ku niebu, tworząc imponujący labirynt głębokich wąwozów.
+W dnie kanionu płynie mały strumyk, którego błyszczące wody stanowią błękitną nitkę wśród skalistego krajobrazu.
+
+> stats
+
+Aktualna ilość hp: 17
+Aktualna ilość ataku: 4
+W ekwipunku nic nie ma.
+
+> go rzeka
+
+Stoisz na brzegu urokliwego jeziora, gdzie spokojna rzeka płynąca z gór wpada w jego nurt, tworząc malownicze połączenie wód.
+Miejsce to emanuje harmonią natury, gdzie szum rzeki miesza się z delikatnym falowaniem jeziora.
+Ptaki wodne unoszą się na powierzchni jeziora, a nad brzegiem rosną kolorowe kwiaty, zdobiąc otoczenie tego magicznego zakątka.
+Woda jeziora mieni się odcieniami niebieskiego, a promienie słońca odbijają się na powierzchni, jakby malowały błyszczący obraz natury.
+
+> search
+
+Przeszukujesz brzegi rzeki, starannie zwracając uwagę na otoczenie.
+Niestety, nie dostrzegasz niczego szczególnie interesującego.
+Jedynym ruchem na horyzoncie są kilka ptaków wodnych, unoszących się na leniwym nurcie rzeki.
+Pomimo starannych poszukiwań, wydaje się, że rzeka nie kryje żadnych tajemniczych przedmiotów czy innych odkryć.
+
+W rzeka nic nie ma.
+
+> go oceanStatek
+
+Unosisz nad dnem oceanu, gdzie rozciąga się zatopiony wrak statku, pozostawiający po sobie tylko fragmenty dawnej świetności.
+Roślinność morska oplata kadłub statku, a promienie słońca przebijające się przez wodę tworzą migotliwe światło na dnie oceanu.
+Wokół unoszą się ryby, a w szczelinach wraku odkrywasz tajemnice, które przetrwały upadek tego statku.
+Czujesz nutę tajemnicy, gdy zbliżasz się do zatopionego wraku, a woda rozchodzi się wokół ciebie jak cicha opowieść o przeszłości.
+
+> search
+
+Rozglądasz się wokół wraku i odkrywasz część portalu, która zdaje się być fragmentem starożytnego artefaktu.
+Część portalu jest wykonana z nieznanego metalu i emanuje słabym światłem, sugerując swoją magiczną naturę.
+Podczas przeszukiwania wnętrza wraku znajdujesz piękną złotą bransoletkę zdobioną misternymi wzorami.
+To wyjątkowy przedmiot, który zdaje się być starożytnym skarbem utraconym w czasie zatopienia statku.
+
+W oceanStatek znajduje się:
+---------
+-- zlotaBransoleta
+-- portalOne
+---------
+
+> take portalOne
+
+Podniosłeś portalOne.
+
+> take zlotaBransoleta
+
+Dostajesz +2 punkty życia i +2 do ataku po założeniu złotej bransolety.
+
+> stats
+
+Aktualna ilość hp: 19
+Aktualna ilość ataku: 6
+W ekwipunku znajduje się:
+---------
+-- portalOne
+-- zlotaBransoleta
+---------
+
+> go pustkowie2
+
+Wędrujesz przez pustkowie, gdzie krajobraz jest surowy, a ziemia spękana od przesuszenia.
+Nie ma tu żadnych oznak życia, a jedynym towarzyszem jest oszałamiające słońce na bezchmurnym niebie.
+W oddali dostrzegasz samotne formacje skalne, które zdają się być ostatnimi świadkami dawnej obfitości tego terenu.
+Pustkowie emanuje atmosferą opuszczenia, a cisza jest jedynym dźwiękiem, jaki się tu rozchodzi.
+
+> search
+
+Rozglądasz się uważnie i dostrzegasz kamień, który może posłużyć za broń.
+Jest to solidny kamień o ostrym kształcie, nadający się do rzucania lub używania jako improwizowana broń.
+
+W pustkowie2 znajduje się:
+---------
+-- kamien
+---------
+
+> take kamien
+
+Dostajesz +1 do ataku za podniesienie kamienia.
+
+> map
+
+Z pustkowie2 prowadzą ścieżki do
+---------
+-- oceanStatek
+-- obozRozbojnikow
+---------
+
+> go obozRozbojnikow
+
+Niestety pomimo zaciętej walki ponosisz porażkę.
+---------
+Wędrujesz przez pustkowie, gdzie krajobraz jest surowy, a ziemia spękana od przesuszenia.
+Nie ma tu żadnych oznak życia, a jedynym towarzyszem jest oszałamiające słońce na bezchmurnym niebie.
+W oddali dostrzegasz samotne formacje skalne, które zdają się być ostatnimi świadkami dawnej obfitości tego terenu.
+Pustkowie emanuje atmosferą opuszczenia, a cisza jest jedynym dźwiękiem, jaki się tu rozchodzi.
+
+> stats
+
+Aktualna ilość hp: 11
+Aktualna ilość ataku: 7
+W ekwipunku znajduje się:
+---------
+-- portalOne
+-- zlotaBransoleta
+-- kamien
+---------
+
+> go oceanStatek
+
+Unosisz nad dnem oceanu, gdzie rozciąga się zatopiony wrak statku, pozostawiający po sobie tylko fragmenty dawnej świetności.
+Roślinność morska oplata kadłub statku, a promienie słońca przebijające się przez wodę tworzą migotliwe światło na dnie oceanu.
+Wokół unoszą się ryby, a w szczelinach wraku odkrywasz tajemnice, które przetrwały upadek tego statku.
+Czujesz nutę tajemnicy, gdy zbliżasz się do zatopionego wraku, a woda rozchodzi się wokół ciebie jak cicha opowieść o przeszłości.
+
+> go oceanPusty
+
+Nurkujesz w głąb oceanu, a wokół ciebie rozciąga się pusty, bezkresny obszar wód głębinowych.
+Brak jakiejkolwiek roślinności czy form życia, jedynie monotonny krajobraz niekończących się wód oceanicznych.
+Ciemność otacza cię ze wszystkich stron, a jedynym dźwiękiem jest łagodne szumienie wody przemieszczanej przez ruchy fal.
+To miejsce emanuje spokojem, ale jednocześnie wzbudza uczucie nieskończoności i tajemnicy oceanicznej głębi.
+
+> go rafaKoralowa
+
+Zanurzasz się w barwnym świecie rafy koralowej, gdzie tysiące koralowców tworzy niezwykłe formacje podwodne.
+Rafa pulsuje życiem, a kolorowe ryby przeplatają się między koralami, tworząc hipnotyzujący taniec pod wodą.
+Na dnie rafy dostrzegasz ukryte jaskinie i groty, które stanowią schronienie dla różnorodnych morskich istot.
+Dźwięki wody i śpiewu morskich istot wypełniają przestrzeń, nadając temu miejscu magii i niepowtarzalnego piękna.
+
+> search
+
+Podczas nurkowania w rafie koralowej dostrzegasz starą skrzynkę, która leży między koralami.
+Skrzynka zdaje się być starożytna i pokryta kolorowymi morskimi roślinami, co czyni ją trudno dostrzegalną.
+
+W rafaKoralowa znajduje się:
+---------
+-- naramiennik
+---------
+
+> take naramiennik
+
+Dostajesz +3 punkty życia po założeniu naramiennika znalezionego w skrzyni.
+
+> goToMoon
+
+Aby polecieć na księżyc, potrzebujesz portalOne, portalTwo, portalThree w swoim ekwipunku.
+> go jaskiniaPodwodna
+
+Po zaciętej walce z utopcami, w końcu odnosisz zwycięstwo!
+---------
+Nurkujesz głęboko w czeluście podwodnej jaskini, gdzie światło słoneczne ledwo przenika przez kryształową wodę.
+Ściany jaskini są pokryte koralowymi formacjami, a kolorowe ryby migoczą wśród zakamarków, tworząc podwodne arcydzieło natury.
+Woda jest przejrzysta, a na dnie jaskini dostrzegasz ukryte jaskinie i szczeliny, które prowadzą do nieznanych zakątków podwodnego świata.
+W ciemnościach jaskini dostrzegasz podejrzany ruch, sugerujący obecność tajemniczych postaci ukrytych w cieniach.
+Dźwięki wody i subtelne szmery morskich istot wypełniają przestrzeń, nadając temu miejscu magiczny i tajemniczy charakter.
+
+> stats
+
+Aktualna ilość hp: 14
+Aktualna ilość ataku: 7
+W ekwipunku znajduje się:
+---------
+-- portalOne
+-- zlotaBransoleta
+-- kamien
+-- naramiennik
+---------
+
+> search
+
+W jaskini podwodnej dostrzegasz jedynie pozostałości po dawnych ucztach utopców.
+
+W jaskiniaPodwodna nic nie ma.
+
+> go jaskinia2
+
+Po zaciętej walce z szkieletami, w końcu odnosisz zwycięstwo!
+---------
+Wkraczasz do jaskini, a wnętrze mieni się blaskiem tysięcy kryształów o różnych kształtach i kolorach.
+Ściany jaskini są dosłownie pokryte błyszczącymi klejnotami, które odbijają światło w fantastyczny sposób.
+W powietrzu unoszą się iskry, tworząc magiczną aurę wokół ciebie, gdy kroczysz po posypanym kryształami podłożu.
+Delikatne dźwięki echo odbijają się od kryształów, tworząc hipnotyzującą symfonię, której nigdy wcześniej nie słyszałeś.
+Nagle, z cienia jaskini wyłaniają się wrogie szkielety! Atakują cię zobacząc, ich oczy świecą złowrogo w mroku.
+Musisz bronić się przed tymi nieumarłymi przeciwnikami, by kontynuować swoją podróż przez tę magiczną, lecz niebezpieczną jaskinię.
+
+> search
+
+Po zakończonym starciu ze szkieletami przystępujesz do przeszukania jaskini w poszukiwaniu cennych przedmiotów.
+Okazuje się, że szkielety nie były tu bez powodu albowiem pilnowały one części portalu.
+Część portalu jest wykonana z nieznanego metalu i emanuje słabym światłem, sugerując swoją magiczną naturę.
+Twoje badania zostają nagrodzone, gdy natrafiasz na żelazną zbroję ukrytą w jednym z zakamarków.
+Zbroja jest solidna i wydaje się być w dobrym stanie, gotowa do założenia i ochrony przed kolejnymi niebezpieczeństwami.
+
+W jaskinia2 znajduje się:
+---------
+-- zbroja
+-- portalTwo
+---------
+
+> take zbroja
+
+Dostajesz +4 punkty życia po założeniu zbroji.
+
+> take portalTwo
+
+Podniosłeś portalTwo.
+
+> go lasBrzozowy
+
+Przechadzasz się przez uroczy las brzozowy, gdzie delikatne liście brzóz szumią w letnim wietrze.
+Pod stopami czujesz miękki dywan z opadłych liści, a promienie słońca przebijające się przez korony drzew malują złote plamy na ziemi.
+Ptaki śpiewają miłe melodie, tworząc harmonijną symfonię natury, a ścieżki wiodą cię między korzeniami i pniami brzóz.
+W oddali słychać szmer strumienia, który dodaje uroku temu malowniczemu zakątkowi lasu.
+
+> go kanion
+
+Nagle zapada się pod tobą ziemia, cudem przeżywasz upadek jednak teraz znajdujesz sięna dnie wielkiego kanionu.
+Ściany skalne wznoszą się ku niebu, tworząc imponujący labirynt głębokich wąwozów.
+W dnie kanionu płynie mały strumyk, którego błyszczące wody stanowią błękitną nitkę wśród skalistego krajobrazu.
+
+> go laka
+
+Jesteś na malowniczej łące, gdzie zielenią traw rozbłyskują kolorowe kwiaty.
+Ptaki śpiewają w gałęziach drzew, a w oddali słychać szmer strumyka.
+
+> go wioska
+
+Przechadzasz się przez malowniczą wioskę, gdzie drewniane domy układają się wzdłuż brukowanych uliczek.
+Ludzie rozmawiają ze sobą na ulicach, a dzieci biegają wesoło wokół zabawek.
+Na rynku widzisz kolorowe stragany, na których sprzedawane są świeże owoce i rękodzieła.
+
+> go tajga
+
+Przechadzasz się przez tajgę, gdzie drzewa sosnowe gęsto porastają obszar wokół ciebie.
+Pod stopami chrupie suchy mech, a powietrze nasycone jest zapachem żywicy.
+W oddali słychać szmer strumienia, a w górze przelatują kolorowe ptaki.
+Jednak w miarę jak penetrujesz gęstwiny drzew, zaczynasz odczuwać mroźny chłód, który przeszywa powietrze.
+
+> go jaskinia1
+
+Po zaciętej walce z endermanem, w końcu odnosisz zwycięstwo!
+---------
+Wchodzisz do ciemnej jaskini, gdzie ciemność otacza cię ze wszystkich stron.
+Mroczne tunele wydają się prowadzić głęboko pod ziemię.
+W miarę jak przemieszczasz się po jaskini, słyszysz dziwne, nieokreślone dźwięki, a zacienione kształty migocą na granicy twojej percepcji.
+Czujesz, że jesteś obserwowany, ale nie możesz zlokalizować źródła tej obecności.
+
+> stats
+
+Aktualna ilość hp: 14
+Aktualna ilość ataku: 7
+W ekwipunku znajduje się:
+---------
+-- portalOne
+-- zlotaBransoleta
+-- kamien
+-- naramiennik
+-- zbroja
+-- portalTwo
+---------
+
+> search
+
+Po zaciętej walce z endermanem, decydujesz się dokładniej zbadać okolicę, by sprawdzić, czy nie ma żadnych wartościowych przedmiotów.
+Twoje starania zostają nagrodzone, gdy znajdujesz fragment portalu ukryty wśród szczątków pokonanego wroga.
+Ten tajemniczy fragment emanuje magiczną energią, sugerując, że może być kluczowym elementem w dalszej części twojej przygody.
+
+W jaskinia1 znajduje się:
+---------
+-- portalThree
+---------
+
+> take portalThree
+
+Podniosłeś portalThree.
+
+> goToMoon
+
+Gratulacje, wygrałeś, jesteś na księżycu i wbiłeś flagę EiTI

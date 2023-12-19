@@ -33,10 +33,14 @@ printGoResult :: State -> State -> IO()
 printGoResult state newState = do
   let currentLocation = i_am_at newState
   let pastLocation = i_am_at state
-  if loc_name(currentLocation) == loc_name(pastLocation) then do
+  let currentHP = hp newState
+  let pastHp = hp state
+  if loc_name(currentLocation) == loc_name(pastLocation) && currentHP /= pastHp then do
     putStrLn "Niestety pomimo zaciętej walki ponosisz porażkę."
+    putStrLn "---------"
   else do
     putStrLn (loc_win_atack currentLocation)
+    putStrLn "---------"
 
 -- hpChange :: State -> State -> IO()
 -- hpChange state newState = do

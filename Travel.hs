@@ -1,7 +1,7 @@
 module Travel where
 
 import Item
-import ItemF
+import ItemFunctions
 import State
 import Location
 import Functions
@@ -25,14 +25,16 @@ printGoingToMoon state = do
     exitWith ExitSuccess
   else do putStr ("Aby polecieć na księżyc, potrzebujesz portalOne, portalTwo, portalThree w swoim ekwipunku.")
 
+
 goToLocation :: State -> String -> State
 goToLocation state locationName = do
   if connected state (loc_paths (i_am_at state)) locationName then do
-    if checkAtack state (loc_paths (i_am_at state)) locationName then do
+    if checkAttack state (loc_paths (i_am_at state)) locationName then do
       goAt state locationName (loc_paths (i_am_at state))
     else do
       takeDMG state (loc_paths (i_am_at state)) locationName
   else state
+
 
 connected :: State -> [Location] -> String -> Bool
 connected state (location: locations) locationName = do
@@ -41,20 +43,21 @@ connected state (location: locations) locationName = do
   else do connected state locations locationName
 connected state [] _ = False
 
-checkAtack :: State -> [Location] -> String -> Bool
-checkAtack state (location: locations) locationName = do
+
+checkAttack :: State -> [Location] -> String -> Bool
+checkAttack state (location: locations) locationName = do
   if (loc_name location) == locationName then do
-    if (loc_attack_required location) >= (atack state) then do
+    if (loc_attack_required location) >= (attack state) then do
       False
     else do
       True
-  else do checkAtack state locations locationName
+  else do checkAttack state locations locationName
 
 
 takeDMG :: State -> [Location] -> String -> State
 takeDMG state (location: locations) locationName = do
   if (loc_name location) == locationName then do
-    state {hp = (hp state) + (loc_lose_atack_hp location)} --zmienić tu żeby dmg dostawał od wroga
+    state {hp = (hp state) + (loc_lose_attack_hp location)} --zmienić tu żeby dmg dostawał od wroga
   else do takeDMG state locations locationName
 
 
@@ -68,4 +71,3 @@ goAt state locationName (location: locations) = do
   else do goAt state locationName locations
 
 goAt state locationName [] = state
-

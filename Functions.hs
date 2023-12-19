@@ -19,6 +19,7 @@ mapPrint state = do
   putStrLn "---------"
   printLocNames paths
 
+
 printLocNames :: [Location] -> IO ()
 printLocNames (location: locations) = do
   let listLength = length locations
@@ -29,17 +30,23 @@ printLocNames (location: locations) = do
   else do
     putStrLn "---------"
 
+
 printGoResult :: State -> State -> IO()
 printGoResult state newState = do
   let currentLocation = i_am_at newState
   let pastLocation = i_am_at state
   let currentHP = hp newState
   let pastHp = hp state
-  if loc_name(currentLocation) == loc_name(pastLocation) && currentHP /= pastHp then do
-    putStrLn "Niestety pomimo zaciętej walki ponosisz porażkę."
-    putStrLn "---------"
+  if loc_name(currentLocation) == loc_name(pastLocation) then do
+    if currentHP /= pastHp then do
+      putStrLn "Niestety pomimo zaciętej walki ponosisz porażkę."
+      putStrLn "---------"
+    else do
+      putStrLn "Nie ma przejścia do lokacji o podanej nazwie."
+      putStrLn "Pozostajesz w tej samej lokacji."
+      putStrLn "---------"
   else do
-    putStrLn (loc_win_atack currentLocation)
+    putStrLn (loc_win_attack currentLocation)
     putStrLn "---------"
 
 -- hpChange :: State -> State -> IO()
@@ -63,11 +70,10 @@ printLook state = do
 printStats :: State -> IO()
 printStats state = do
   let health = hp state
-  let cur_atack = atack state
+  let cur_attack = attack state
   putStrLn ("Aktualna ilość hp: " ++ show health)
-  putStrLn ("Aktualna ilość ataku: " ++ show cur_atack)
+  putStrLn ("Aktualna ilość ataku: " ++ show cur_attack)
   printSearch state "ekwipunku"
-
 
 
 printSearch :: State -> String -> IO()
@@ -91,5 +97,3 @@ printItems (item: items) = do
     printItems items
   else do
     putStrLn "---------"
-
-

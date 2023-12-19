@@ -9,8 +9,8 @@ data Location = Location{
     loc_search :: [String],
     loc_attack_required :: Integer,
     loc_health_change :: Integer,
-    loc_win_atack :: String,
-    loc_lose_atack_hp :: Integer,
+    loc_win_attack :: String,
+    loc_lose_attack_hp :: Integer,
     loc_items :: [Item],
     loc_paths :: [Location]
 }
@@ -32,8 +32,8 @@ pustkowie2 = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [kamien],
     loc_paths = [oceanStatek, obozRozbojnikow]
 }
@@ -56,8 +56,8 @@ oceanStatek = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [zlotaBransoleta, portalOne],
     loc_paths = [oceanPusty, rzeka, pustkowie2]
 }
@@ -77,8 +77,8 @@ oceanPusty = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [rafaKoralowa, kanion, oceanStatek]
 }
@@ -99,8 +99,8 @@ rafaKoralowa = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [naramiennik],
     loc_paths = [jaskiniaPodwodna, lasBrzozowy, oceanPusty]
 }
@@ -121,8 +121,8 @@ jaskiniaPodwodna = Location {
     ],
     loc_attack_required = 5,
     loc_health_change = 0,
-    loc_win_atack = "Po zaciętej walce z utopcami, w końcu odnosisz zwycięstwo!",
-    loc_lose_atack_hp = -5,
+    loc_win_attack = "Po zaciętej walce z utopcami, w końcu odnosisz zwycięstwo!",
+    loc_lose_attack_hp = -5,
     loc_items = [],
     loc_paths = [jaskinia2, rafaKoralowa]
 }
@@ -143,8 +143,8 @@ obozRozbojnikow = Location {
     ],
     loc_attack_required = 12,
     loc_health_change = 0,
-    loc_win_atack = "Po zaciętej walce z rozbójnikami, w końcu odnosisz zwycięstwo!",
-    loc_lose_atack_hp = -8,
+    loc_win_attack = "Po zaciętej walce z rozbójnikami, w końcu odnosisz zwycięstwo!",
+    loc_lose_attack_hp = -8,
     loc_items = [skorzaneButy],
     loc_paths = [pustkowie2, rzeka, gory]
 }
@@ -167,8 +167,8 @@ rzeka = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [oceanStatek, kanion, jezioro, obozRozbojnikow]
 }
@@ -188,8 +188,8 @@ kanion = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = -3,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [oceanPusty, lasBrzozowy, laka, rzeka]
 }
@@ -212,8 +212,8 @@ lasBrzozowy = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [miod],
     loc_paths = [rafaKoralowa, jaskinia2, lasDebowy, kanion]
 }
@@ -239,8 +239,8 @@ jaskinia2 = Location {
     ],
     loc_attack_required = 7,
     loc_health_change = 0,
-    loc_win_atack = "Po zaciętej walce z szkieletami, w końcu odnosisz zwycięstwo!",
-    loc_lose_atack_hp = -7,
+    loc_win_attack = "Po zaciętej walce z szkieletami, w końcu odnosisz zwycięstwo!",
+    loc_lose_attack_hp = -7,
     loc_items = [zbroja, portalTwo],
     loc_paths = [jaskiniaPodwodna, wysokieGory, lasBrzozowy]
 }
@@ -264,8 +264,8 @@ gory = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = -2,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [miecz],
     loc_paths = [obozRozbojnikow, jezioro, jaskinia1]
 }
@@ -285,8 +285,8 @@ jezioro = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [rzeka, laka, tajga, gory]
 }
@@ -306,8 +306,8 @@ laka = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [kanion, lasDebowy, wioska, jezioro]
 }
@@ -328,8 +328,8 @@ lasDebowy = Location {
     ],
     loc_attack_required = 4,
     loc_health_change = 0,
-    loc_win_atack = "Po zaciętej walce z wilkami, w końcu odnosisz zwycięstwo!",
-    loc_lose_atack_hp = -4,
+    loc_win_attack = "Po zaciętej walce z wilkami, w końcu odnosisz zwycięstwo!",
+    loc_lose_attack_hp = -4,
     loc_items = [skoraWilka],
     loc_paths = [lasBrzozowy, wysokieGory, dolina, laka]
 }
@@ -351,8 +351,8 @@ wysokieGory = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = -4,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [jaskinia2, zniszczonyPortal, lasDebowy]
 }
@@ -374,8 +374,8 @@ jaskinia1 = Location {
     ],
     loc_attack_required = 6,
     loc_health_change = -0,
-    loc_win_atack = "Po zaciętej walce z endermanem, w końcu odnosisz zwycięstwo!",
-    loc_lose_atack_hp = -6,
+    loc_win_attack = "Po zaciętej walce z endermanem, w końcu odnosisz zwycięstwo!",
+    loc_lose_attack_hp = -6,
     loc_items = [portalThree],
     loc_paths = [gory, tajga, tundra]
 }
@@ -397,8 +397,8 @@ tajga = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = -1,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [patyk],
     loc_paths = [jezioro, wioska, stepy, jaskinia1]
 }
@@ -419,8 +419,8 @@ wioska = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [chleb],
     loc_paths = [laka, dolina, pustynia, tajga]
 }
@@ -441,8 +441,8 @@ dolina = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [lasDebowy, zniszczonyPortal, mesa, wioska]
 }
@@ -465,8 +465,8 @@ zniszczonyPortal = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [wysokieGory, pustkowie1, dolina]
 }
@@ -489,8 +489,8 @@ tundra = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = -3,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [jaskinia1, stepy]
 }
@@ -512,8 +512,8 @@ stepy = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [tajga, pustynia, tundra]
 }
@@ -535,8 +535,8 @@ pustynia = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = -1,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [wioska, mesa, stepy]
 }
@@ -558,8 +558,8 @@ mesa = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [dolina, pustkowie1, pustynia]
 }
@@ -581,8 +581,8 @@ pustkowie1 = Location {
     ],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = [zniszczonyPortal, mesa]
 }
@@ -595,8 +595,8 @@ moon = Location {
     loc_search = [],
     loc_attack_required = 0,
     loc_health_change = 0,
-    loc_win_atack = "",
-    loc_lose_atack_hp = 0,
+    loc_win_attack = "",
+    loc_lose_attack_hp = 0,
     loc_items = [],
     loc_paths = []
 }

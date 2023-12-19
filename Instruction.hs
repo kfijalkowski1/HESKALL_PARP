@@ -4,16 +4,14 @@ instructionsText =
     [
         "Używaj komend zgodnie ze składnią Haskell-a.",
         "dostępne komendy:",
-        "start              -- aby rozpocząć grę.",
-        "go <location>      -- aby iść do dostępnej lokacji.",
-        "take <item>        -- aby podnieść obiekt.",
-        "look               -- aby się rozejrzeć.",
-        "search             -- aby przeszukać lokacje.",
         "instructions       -- aby zobaczyć tą wiadomość.",
-        "halt               -- aby zatrzymać grę i wyjść.",
+        "stats              -- aby wyświetlić aktualne statystyki gracza.",
+        "look               -- aby się rozejrzeć.",
+        "search             -- aby przeszukać lokację.",
+        "take <item>        -- aby podnieść obiekt.",
         "map                -- aby dowiedzieć się gdzie można iść.",
+        "go <location>      -- aby iść do dostępnej lokacji.",
         "goToMoon           -- aby spróbować polecieć na księżyc.",
-        "stats              -- wyświetla aktualne statystyki gracza.",
         "quit               -- aby wyjść z Haskell-a.",
         ""
     ]

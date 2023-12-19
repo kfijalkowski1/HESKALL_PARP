@@ -1,4 +1,4 @@
-module ItemF where
+module ItemFunctions where
 
 import Item
 import State
@@ -15,7 +15,7 @@ takeItem state item = do
     state {
         holding = holding state ++ [itemObj],
         hp = (hp state) + itemHP,
-        atack = (atack state) + itemAt
+        attack = (attack state) + itemAt
       }
   else state
 

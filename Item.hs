@@ -82,21 +82,21 @@ kamien = Item{
 
 portalOne = Item{
     item_name = "portalOne",
-    item_description = "",
+    item_description = "Podniosłeś portalOne.",
     item_health_change = 0,
     item_attack_change = 0
 }
 
 portalTwo = Item{
     item_name = "portalTwo",
-    item_description = "",
+    item_description = "Podniosłeś portalTwo.",
     item_health_change = 0,
     item_attack_change = 0
 }
 
 portalThree = Item{
     item_name = "portalThree",
-    item_description = "",
+    item_description = "Podniosłeś portalThree.",
     item_health_change = 0,
     item_attack_change = 0
 }

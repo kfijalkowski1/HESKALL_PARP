@@ -8,7 +8,7 @@ data State = State
   { i_am_at :: Location,
     holding :: [Item],
     hp :: Integer,
-    atack :: Integer,
+    attack :: Integer,
     finished :: Bool
   }
 
@@ -17,7 +17,7 @@ initialState :: State
 initialState = State {
     i_am_at = laka,
     holding = [],
-    hp = 5,
-    atack = 5,
+    hp = 20,
+    attack = 4,
     finished = True
 }

@@ -5,7 +5,7 @@ import System.Exit (exitWith, ExitCode(..))
 import State
 import Location
 import Functions
-import ItemF
+import ItemFunctions
 import Travel
 
 
@@ -71,5 +71,5 @@ gameLoop state = do
 
 
 main = do
-    -- printIntroduction
+    printInstructions
     gameLoop initialState

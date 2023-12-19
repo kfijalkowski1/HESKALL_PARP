@@ -39,6 +39,8 @@ gameLoop state = do
           gameLoop state
 
         ["search"] -> do
+          printLookSearch state
+          putStrLn ""
           printSearch (loc_items (i_am_at state)) (loc_name (i_am_at state))
           gameLoop state
 
@@ -54,7 +56,6 @@ gameLoop state = do
         ["go", location] -> do
           let newState = goToLocation state location
           printGoResult state newState
-          -- hpChange state newState
           printLook newState
           gameLoop newState
 
@@ -66,7 +67,7 @@ gameLoop state = do
         ["quit"] -> return ()
 
         _ -> do
-          printLines ["Unknown command.", ""]
+          putStrLn "Unknown command."
           gameLoop state
 
 

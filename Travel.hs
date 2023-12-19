@@ -47,7 +47,7 @@ connected state [] _ = False
 checkAttack :: State -> [Location] -> String -> Bool
 checkAttack state (location: locations) locationName = do
   if (loc_name location) == locationName then do
-    if (loc_attack_required location) >= (attack state) then do
+    if (loc_attack_required location) > (attack state) then do
       False
     else do
       True

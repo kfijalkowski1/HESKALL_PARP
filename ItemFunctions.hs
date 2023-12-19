@@ -41,4 +41,5 @@ printTake state item = do
     let itemObj = getItemByName (loc_items (i_am_at state)) item
     let msg = item_description itemObj
     putStr msg
+    putStrLn ""
   else do putStr (item ++ " nie istnieje")

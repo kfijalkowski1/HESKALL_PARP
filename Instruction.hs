@@ -3,7 +3,8 @@ module Instruction where
 instructionsText =
     [
         "Używaj komend zgodnie ze składnią Haskell-a.",
-        "dostępne komendy:",
+        "Dostępne komendy:",
+        "",
         "instructions       -- aby zobaczyć tą wiadomość.",
         "stats              -- aby wyświetlić aktualne statystyki gracza.",
         "look               -- aby się rozejrzeć.",
@@ -12,6 +13,5 @@ instructionsText =
         "map                -- aby dowiedzieć się gdzie można iść.",
         "go <location>      -- aby iść do dostępnej lokacji.",
         "goToMoon           -- aby spróbować polecieć na księżyc.",
-        "quit               -- aby wyjść z Haskell-a.",
-        ""
+        "quit               -- aby wyjść z Haskell-a."
     ]

@@ -36,9 +36,10 @@ printGoResult state newState = do
   let currentLocation = i_am_at newState
   let pastLocation = i_am_at state
   let currentHP = hp newState
-  let pastHp = hp state
+  let pastHP = hp state
+
   if loc_name(currentLocation) == loc_name(pastLocation) then do
-    if currentHP /= pastHp then do
+    if currentHP /= pastHP then do
       putStrLn "Niestety pomimo zaciętej walki ponosisz porażkę."
       putStrLn "---------"
     else do
@@ -46,24 +47,22 @@ printGoResult state newState = do
       putStrLn "Pozostajesz w tej samej lokacji."
       putStrLn "---------"
   else do
-    putStrLn (loc_win_attack currentLocation)
-    putStrLn "---------"
+    if loc_attack_required(currentLocation) > 0 then do
+      putStrLn (loc_win_attack currentLocation)
+      putStrLn "---------"
+    else do
+      putStr ""
 
--- hpChange :: State -> State -> IO()
--- hpChange state newState = do
---   let currentHP = hp newState
---   let pastHp = hp state
---   let changedHp = currentHP - pastHp
---   if currentHP == pastHp then do
---     putStrLn ""
---   else if changedHp > 0 then do
---     putStrLn ("Zyskałeś: " ++ changedHp ++ " hp")
---   else do
---     putStrLn ("Straciłeś: " ++ changedHp ++ " hp")
 
 printLook :: State -> IO()
 printLook state = do
   let msg = loc_description (i_am_at state)
+  printLines msg
+
+
+printLookSearch :: State -> IO()
+printLookSearch state = do
+  let msg = loc_search (i_am_at state)
   printLines msg
 
 
@@ -79,10 +78,11 @@ printStats state = do
 printSearch :: [Item] -> String -> IO()
 printSearch items place = do
     let listLength = length items
+
     if (listLength /= 0) then do
       putStrLn ("W " ++ (place) ++ " znajduje się: ")
       putStrLn "---------"
-      printItems( items )
+      printItems (items)
     else do
       putStrLn ("W " ++ (place) ++ " nic nie ma.")
 

@@ -44,7 +44,7 @@ gameLoop state = do
           gameLoop state
 
         ["search"] -> do
-          printSearch state
+          printSearch state (loc_name (i_am_at state))
           gameLoop state
 
         ["goToMoon"] -> do

@@ -34,11 +34,6 @@ gameLoop state = do
           printStats state
           gameLoop state
 
-        ["take", object] -> do
-          let newState = takeItem state object
-          printTake newState object
-          gameLoop newState
-
         ["look"] -> do
           printLook state
           gameLoop state
@@ -47,9 +42,9 @@ gameLoop state = do
           printSearch state (loc_name (i_am_at state))
           gameLoop state
 
-        ["goToMoon"] -> do
-          let newState = goToMoon state
-          printGoingToMoon newState
+        ["take", object] -> do
+          let newState = takeItem state object
+          printTake newState object
           gameLoop newState
 
         ["map"] -> do
@@ -61,6 +56,11 @@ gameLoop state = do
           printGoResult state newState
           -- hpChange state newState
           printLook newState
+          gameLoop newState
+
+        ["goToMoon"] -> do
+          let newState = goToMoon state
+          printGoingToMoon newState
           gameLoop newState
 
         ["quit"] -> return ()

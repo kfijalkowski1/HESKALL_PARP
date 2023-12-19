@@ -47,7 +47,7 @@ printGoResult state newState = do
 --     putStrLn ""
 --   else if changedHp > 0 then do
 --     putStrLn ("Zyskałeś: " ++ changedHp ++ " hp")
---   else do 
+--   else do
 --     putStrLn ("Straciłeś: " ++ changedHp ++ " hp")
 
 printLook :: State -> IO()
@@ -66,9 +66,14 @@ printStats state = do
 
 printSearch :: State -> IO()
 printSearch state = do
-    putStrLn ("W " ++ (loc_name (i_am_at state)) ++ "znajduje się: ")
-    putStrLn "---------"
-    printItems( (loc_items (i_am_at state)) )
+    let items = loc_items (i_am_at state)
+    let listLength = length items
+    if (listLength /= 0) then do
+      putStrLn ("W " ++ (loc_name (i_am_at state)) ++ " znajduje się: ")
+      putStrLn "---------"
+      printItems( items )
+    else do
+      putStrLn ("W " ++ (loc_name (i_am_at state)) ++ " nic nie ma.")
 
 
 printItems :: [Item] -> IO()

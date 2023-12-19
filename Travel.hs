@@ -21,7 +21,7 @@ goToMoon state = do
 printGoingToMoon :: State -> IO()
 printGoingToMoon state = do
   if (loc_name (i_am_at state)) == "moon" then do
-    putStrLn "Jesteś na księżycu, fdsfs" --TODO napisać opis
+    putStrLn "Gratulacje, wygrałeś, jesteś na księżycu i wbiłeś flagę EiTI" --TODO napisać opis
     exitWith ExitSuccess
   else do putStr ("Aby polecieć na księżyc, potrzebujesz portalOne, portalTwo, portalThree w swoim ekwipunku.")
 
@@ -30,7 +30,7 @@ goToLocation state locationName = do
   if connected state (loc_paths (i_am_at state)) locationName then do
     if checkAtack state (loc_paths (i_am_at state)) locationName then do
       goAt state locationName (loc_paths (i_am_at state))
-    else do 
+    else do
       takeDMG state (loc_paths (i_am_at state)) locationName
   else state
 
@@ -46,7 +46,7 @@ checkAtack state (location: locations) locationName = do
   if (loc_name location) == locationName then do
     if (loc_attack_required location) >= (atack state) then do
       False
-    else do 
+    else do
       True
   else do checkAtack state locations locationName
 

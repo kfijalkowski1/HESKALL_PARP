@@ -73,12 +73,11 @@ printStats state = do
   let cur_attack = attack state
   putStrLn ("Aktualna ilość hp: " ++ show health)
   putStrLn ("Aktualna ilość ataku: " ++ show cur_attack)
-  printSearch state "ekwipunku"
+  printSearch (holding state) "ekwipunku"
 
 
-printSearch :: State -> String -> IO()
-printSearch state place = do
-    let items = loc_items (i_am_at state)
+printSearch :: [Item] -> String -> IO()
+printSearch items place = do
     let listLength = length items
     if (listLength /= 0) then do
       putStrLn ("W " ++ (place) ++ " znajduje się: ")

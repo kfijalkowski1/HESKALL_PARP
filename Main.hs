@@ -39,7 +39,7 @@ gameLoop state = do
           gameLoop state
 
         ["search"] -> do
-          printSearch state (loc_name (i_am_at state))
+          printSearch (loc_items (i_am_at state)) (loc_name (i_am_at state))
           gameLoop state
 
         ["take", object] -> do

@@ -190,7 +190,7 @@ kanion = Location {
     loc_health_change = -3,
     loc_win_attack = "",
     loc_lose_attack_hp = 0,
-    loc_items = [],
+    loc_items = [skoraWilka],
     loc_paths = [oceanPusty, lasBrzozowy, laka, rzeka]
 }
 

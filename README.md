@@ -1,3 +1,4 @@
-# heskal
+# PARP zad 2 - Haskell
 
-heskal repo
+
+więcej informacji w pliku pdf
